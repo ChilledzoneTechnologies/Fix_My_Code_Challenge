@@ -1,54 +1,32 @@
 #!/usr/bin/python3
+"""This module contains the class square"""
 
-class Square:
-    """
-    A class representing a square shape.
-    
-    Attributes:
-    - width: The width of the square.
-    - height: The height of the square.
-    """
 
-    def __init__(self, width=0, height=0):
-        """
-        Initializes a square with the given width and height.
-        
-        Args:
-        - width: The width of the square.
-        - height: The height of the square.
-        """
-        self.width = width
-        self.height = height
+class square():
+    """Definations of the class square"""
+
+    def __init__(self, *args, **kwargs):
+        """ Initializer for square class """
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+            break
 
     def area_of_my_square(self):
-        """
-        Calculates the area of the square.
-        
-        Returns:
-        The area of the square.
-        """
-        return self.width * self.height
+        """ Area of the square """
+        return self.width * self.width
 
-    def perimeter_of_my_square(self):
-        """
-        Calculates the perimeter of the square.
-        
-        Returns:
-        The perimeter of the square.
-        """
-        return (self.width * 2) + (self.height * 2)
+    def permiter_of_mySquare(self):
+        """ Perimeter of the square """
+        return (self.width * 4)
 
     def __str__(self):
-        """
-        Returns a string representation of the square.
-        
-        Returns:
-        A string representation of the square in the format 'width/height'.
-        """
-        return "{}/{}".format(self.width, self.height)
+        """ String format """
+        return "{}/{}".format(self.width, self.width)
+
 
 if __name__ == "__main__":
-    s = Square(width=12, height=9)
+
+    s = square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
-    print(s.perimeter_of_my_square())
+    print(s.permiter_of_mySquare())
